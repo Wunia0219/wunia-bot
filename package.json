@@ -1,0 +1,26 @@
+{
+  "name": "cinnamoroll-calendar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/bot.js",
+    "test": "npm run build:art && node --test",
+    "build:art": "node scripts/cloud-art.js",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply cinnamoroll-calendar --remote"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^1.15.0",
+    "@discordjs/formatters": "^0.6.2",
+    "@napi-rs/canvas": "^1.1.1",
+    "discord-api-types": "^0.38.59",
+    "discord.js": "^14.26.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.163.0"
+  }
+}

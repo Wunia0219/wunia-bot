@@ -1,0 +1,24 @@
+name = "cinnamoroll-calendar"
+main = "src/worker.js"
+compatibility_date = "2026-11-17"
+compatibility_flags = ["nodejs_compat"]
+preview_urls = false
+keep_vars = true
+
+[build]
+command = "npm run build:art"
+
+[vars]
+DISCORD_APPLICATION_ID = "1572140619101376532"
+DISCORD_PUBLIC_KEY = "b43f2d20c087b174e7066b1d9a988a0d8b9ffd60b6ab09eacf21732a97927112"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cinnamoroll-calendar"
+database_id = "5bdca660-4c18-4096-96a0-eb0ec27549e1"
+
+[browser]
+binding = "BROWSER"
+
+[triggers]
+crons = ["*/15 * * * *"]
